@@ -1,5 +1,5 @@
 import { describe, test, it, expect } from "vitest";
-import { fizzBuzz, max } from "../src/intro";
+import { Average, Factorial, fizzBuzz, max } from "../src/intro";
 
 describe("max", () => {
   it("should return first arguments if it is higher", () => {
@@ -31,5 +31,38 @@ describe("fizBuzz", () => {
   });
   it("should return Buzz if it is divisible by 5 ", () => {
     expect(fizzBuzz(5)).toBe("Buzz");
+  });
+  it("should return the number as string if it is not divisible by 3 and 5", () => {
+    expect(fizzBuzz(2)).toBe("2");
+  });
+});
+
+describe("average", () => {
+  it("the average should be NaN if it is any empty arr", () => {
+    expect(Average([])).toBe(NaN);
+  });
+  it("the average should be the value if the arr is an single element array", () => {
+    expect(Average([1])).toBe(1);
+  });
+  it("should return average of 2 value array", () => {
+    expect(Average([1, 2])).toBe(1.5);
+  });
+  it("should return the average of array with 3 elements", () => {
+    expect(Average([1, 2, 3])).toBe(2);
+  });
+});
+
+describe("Factorial", () => {
+  it("should return 1 if the input is 0", () => {
+    expect(Factorial(0)).toBe(1);
+  });
+  it("should return 1 if the input is 1", () => {
+    expect(Factorial(1)).toBe(1);
+  });
+  it("should return 6 if it return 6", () => {
+    expect(Factorial(3)).toBe(6);
+  });
+  it("should be undefined if it return negative number", () => {
+    expect(Factorial(-1)).toBe(undefined);
   });
 });
